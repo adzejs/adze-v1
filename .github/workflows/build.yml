@@ -7,20 +7,51 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-      - name: Yarn Cache
-        uses: c-hive/gha-yarn-cache@v1
-      - name: Install Dependencies
-        run: yarn install --force
-      - name: Build Content
-        run: yarn docs:build
-      - name: Publish
-        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+        uses: actions/checkout@v3
         with:
-          dir: docs/.vuepress/dist
+          fetch-depth: 0
+          lfs: true
+          # if your docs needs submodules, uncomment the following line
+          # submodules: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install Deps
+        run: npm ci
+      - name: Build Docs
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          npm run docs:build
+          > docs/.vuepress/dist/.nojekyll
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          # This is the branch where the docs are deployed to
           branch: gh-pages
-          token: ${{ secrets.PAGES_TOKEN }}
+          folder: docs/.vuepress/dist
+  # docs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v1
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v1
+  #     - name: Yarn Cache
+  #       uses: c-hive/gha-yarn-cache@v1
+  #     - name: Install Dependencies
+  #       run: yarn install --force
+  #     - name: Build Content
+  #       run: yarn docs:build
+  #     - name: Publish
+  #       uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+  #       with:
+  #         dir: docs/.vuepress/dist
+  #         branch: gh-pages
+  #         token: ${{ secrets.PAGES_TOKEN }}
