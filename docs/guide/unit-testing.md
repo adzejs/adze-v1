@@ -1,5 +1,9 @@
 # Unit Testing
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 When executing your unit tests you generally do not want to see the internal logging of the code you are testing; rather you only care about the inputs and outputs. To disable logs while executing your unit tests, within your unit test file you should set the global value `ADZE_ENV = 'test'`. This tells adze logs to prevent rendering for the sake of unit tests.
 
 ### Example

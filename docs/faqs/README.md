@@ -4,6 +4,10 @@ sidebar: auto
 
 # Frequently Asked Questions
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 This section is dedicated to answering common problems that might occur while using Adze in your project.
 
 ## SvelteKit Error

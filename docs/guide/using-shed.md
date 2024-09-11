@@ -1,5 +1,9 @@
 # Using Shed
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 Let's take a deeper dive into each of Shed's public methods.
 
 ## addLabel

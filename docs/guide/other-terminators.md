@@ -1,5 +1,9 @@
 # Other Terminators
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 Aside from the [default terminator methods](default-terminators.md), Adze also exposes a few others for different utility purposes.
 
 ## clear / clr

@@ -1,5 +1,9 @@
 # Installing Adze
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 ## Install the Package
 
 You can install Adze from NPM using the following command:

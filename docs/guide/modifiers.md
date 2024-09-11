@@ -1,5 +1,9 @@
 # Modifiers
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 Once you have an Adze log instance you can now start applying modifiers. Modifiers are methods that alter the log in some way and then return
 the log instance so that you may chain more modifiers or terminate the instance. Keep in mind, some modifiers have a dependency on the presence of a [label](#label) and labels rely on Shed.
 

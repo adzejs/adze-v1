@@ -1,5 +1,9 @@
 # Creating Add-on's
 
+:::danger
+Adze v1.x is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!
+:::
+
 One of the core tenets of Adze is to **not do too much**. This means that the core functionality of Adze is to provide the user with the ability to have control over their logs, how they are shaped, and to be able to listen to their logs and do with the log data as they please. Anything resembling transporting log data to files, API's, or databases is purposefully omitted from the core. However, because of Adze [log listeners](../guide/shed-concepts.md#listeners), there is opportunity for add-on packages to provide simple solutions for handling log data transports and various other solutions.
 
 ## Best Practices

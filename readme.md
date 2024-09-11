@@ -1,5 +1,7 @@
 # Adze
 
+<strong style="font-size: 32px; color: red;">v1 is now deprecated! Please upgrade to [v2.x](https://adzejs.com/)!</strong>
+
 ![Adze Logo](docs/assets/logo_small.png)
 
 [![build workflow](https://github.com/AJStacy/adze/actions/workflows/build.yml/badge.svg)](https://github.com/AJStacy/adze/actions/workflows/build.yml)
