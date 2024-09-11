@@ -1,0 +1,26 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+      - name: Yarn Cache
+        uses: c-hive/gha-yarn-cache@v1
+      - name: Install Dependencies
+        run: yarn install --force
+      - name: Build Content
+        run: yarn docs:build
+      - name: Publish
+        uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
+        with:
+          dir: docs/.vuepress/dist
+          branch: gh-pages
+          token: ${{ secrets.PAGES_TOKEN }}
